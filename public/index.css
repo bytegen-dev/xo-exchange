@@ -333,18 +333,20 @@ html{
         position: fixed;
         bottom: 20px;
         right: 20px;
-        z-index: 21;
+        z-index: 6;
         width: 30px;
         height: 30px;
         border-radius: 50%;
         background-color: #fff;
-        opacity: 0.4;
-        transform: translateY(100px);
+        opacity: 0;
+        scale: 0;
+        /* transform: translateY(100px); */
         transition: all 0.5s ease;
     }
-
+    
     .show.show-footer{
-        transform: translateY(0);
+        opacity: 0.4;
+        scale: 1;
     }
 
 
