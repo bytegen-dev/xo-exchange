@@ -85,10 +85,10 @@ export default function App(){
             
             function touchMove(event){
                 const endY = event.changedTouches[0].clientY
-                if(endY < startY - 50){
+                if(endY < startY){
                     setFooterVisible(false)
                 }
-                else if(endY > startY + 50){
+                else if(endY > startY){
                     setFooterVisible(true)
                 }
             }
