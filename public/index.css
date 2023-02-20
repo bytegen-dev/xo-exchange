@@ -250,6 +250,10 @@ html{
     height: 0px;
 }
 
+.show-footer{
+    display: none;
+}
+
 @media screen and (max-width: 700px) {
     .type-big{
         width: 100%;
@@ -321,4 +325,28 @@ html{
     .footer.show{
         transform: translateY(0);
     }
+
+    .show-footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 21;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.4;
+        transform: translateY(100px);
+        transition: all 0.5s ease;
+    }
+
+    .show.show-footer{
+        transform: translateY(0);
+    }
+
+
+
 }

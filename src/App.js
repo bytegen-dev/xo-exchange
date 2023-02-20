@@ -94,15 +94,12 @@ export default function App(){
             }
 
             function touchEnd(){
-                if(footerVisible === false){
-                    setTimeout(function(){
-                        setFooterVisible(true)
-                    }, 2000)
-                }
-                else{
-                    return
-                }
+                console.log("touch ended")
             }
+    }
+
+    function showFooter(){
+        setFooterVisible(true)
     }
 
 
@@ -123,6 +120,9 @@ export default function App(){
             isSettings={uiSettings.showSettings}
             isFave={uiSettings.showFave}
             />
+            <div onClick={showFooter} className={footerVisible ? "show-footer" : "show show-footer"}>
+                <i className="fa fa-arrow-up" />
+            </div>
         </div>
     )
 }

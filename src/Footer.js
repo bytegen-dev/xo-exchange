@@ -20,6 +20,7 @@ export default function Footer(props){
             <button className={props.isSettings ? "active" : ""} onClick={props.gotoSettings}>
                 <i className="fa fa-gear"/>
             </button>
+            
 
         </div>
     )
