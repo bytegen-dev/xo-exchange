@@ -13,7 +13,7 @@ export default function App(){
         showFave: false,
         showSettings: false,
         showFooter: true,
-        darkMode: true,
+        darkMode: false,
     })
     
     function gotoHome(){

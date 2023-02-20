@@ -5,8 +5,7 @@ export default function Home(props){
         <div className={props.className}>
             <div className="welcome">
                 <div className="hello">
-                <p>Welcome back,</p>
-                <p>Hello XXXXXX</p>
+                    <img src="currency.png" alt="xoxchange-icon"/> <span>Xchange 💸</span>
                 </div>
                 <div onClick={props.toggleDarkMode} className="theme"><i className="fa fa-adjust" /></div>
             </div>

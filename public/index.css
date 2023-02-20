@@ -48,6 +48,12 @@ html{
     overflow-y: scroll;
 }
 
+.home img{
+    width: 45px;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
 .dark .type-big{
     background-color: #242327;
     color: #fff;
@@ -152,6 +158,14 @@ html{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+}
+
+.home .hello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #5c5c5c;
 }
 
 .home .featured{
@@ -337,7 +351,8 @@ html{
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: #000;
+        color: #fff;
         opacity: 0;
         scale: 0;
         /* transform: translateY(100px); */
@@ -347,6 +362,11 @@ html{
     .show.show-footer{
         opacity: 0.4;
         scale: 1;
+    }
+
+    .dark .show-footer{
+        background-color: #fff;
+        color: #000;
     }
 
 
