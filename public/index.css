@@ -16,6 +16,10 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html{
+    overflow: hidden;
+}
+
 .dark{
     background-color: #242327;
 }
