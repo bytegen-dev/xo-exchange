@@ -1,10 +1,11 @@
 import React from "react";
+import { useState } from "react";
+// import axios from "axios";
 import Home from "./Home";
 import Search from "./Search";
 import Settings from "./Settings";
 import Footer from "./Footer";
 import Fave from "./Fave";
-import { useState } from "react";
 
 export default function App(){
     const [uiSettings, setUiSettings] = useState({
@@ -101,6 +102,8 @@ export default function App(){
     function showFooter(){
         setFooterVisible(true)
     }
+
+    
 
 
     return(
