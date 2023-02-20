@@ -3,6 +3,7 @@ import Home from "./Home";
 import Search from "./Search";
 import Settings from "./Settings";
 import Footer from "./Footer";
+import Fave from "./Fave";
 import { useState } from "react";
 
 export default function App(){
@@ -12,7 +13,7 @@ export default function App(){
         showFave: false,
         showSettings: false,
         showFooter: true,
-        darkMode: false,
+        darkMode: true,
     })
     
     function gotoHome(){
@@ -109,6 +110,7 @@ export default function App(){
         <div className={uiSettings.darkMode ? "dark container" : "container"}>
             <Home onTouchStart={touchStarted} toggleDarkMode={toggleDarkMode} className={uiSettings.showHome ? "home show type-big" : "home type-big"}/>
             <Search className={uiSettings.showSearch ? "search show type-big" : "search type-big"}/>
+            <Fave className={uiSettings.showFave ? "show fave type-big" : "fave type-big"} />
             <Settings className={uiSettings.showSettings ? "settings show type-big" : "settings type-big"}/>
             <Footer
             className={footerVisible ? "footer show type-big" : "footer type-big"}

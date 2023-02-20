@@ -24,13 +24,13 @@
     position: fixed;
 }
 
-.home, .search, .settings{
+.home, .search, .settings, .fave{
     opacity: 0 !important;
     visibility: hidden !important;
     transition: all 0.25s ease !important;
 }
 
-.show.home, .show.search, .show.settings{
+.show.home, .show.search, .show.settings, .show.fave{
     opacity: 1 !important;
     visibility: visible !important;
 }
@@ -61,6 +61,14 @@
     width: calc(100% - 100px);
     height: 100%;
     z-index: 3;
+    background-color: #fff;
+    transition: all 0.5 ease;
+}
+
+.fave{
+    width: calc(100% - 100px);
+    height: 100%;
+    z-index: 4;
     background-color: #fff;
     transition: all 0.5 ease;
 }
@@ -243,6 +251,14 @@
         width: 100%;
     }
 
+    .dark .home, .dark .search, .dark .settings, .dark .fave{
+        background-color: #000;
+    }
+
+    .dark .featured .featured-items-holder .featured--item{
+        background-color: #fff;
+    }
+
     
     .footer button{
         width: 40px;
@@ -258,6 +274,10 @@
         color: #aaa;
     }
 
+    .dark .footer{
+        border-top: 2px solid #fff9;
+    }
+
     .footer button.active{
         color: #242327 !important;
         scale: 1.5;
@@ -266,6 +286,7 @@
         transform: translateY(-15px);
         background-color: #fff;
     }
+
 
     .footer button i{
         transition-property: color, transform;
@@ -280,7 +301,7 @@
     }
     
     .dark .footer button.active{
-        border-color: #000;
+        border-color: #fff;
         background-color: #fff;
     }
 
