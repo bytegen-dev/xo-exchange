@@ -191,7 +191,7 @@
 .home .watchlist--about{
     /* background-color: red; */
     padding: 20px;
-    margin: 0 20px 20px 20px;
+    margin: 0 20px 0 20px;
     border-bottom: 2px solid #9995;
     display: flex;
     justify-content: space-between;
