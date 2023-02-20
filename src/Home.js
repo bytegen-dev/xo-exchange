@@ -1,10 +1,14 @@
 import React from "react";
 
 export default function Home(props){
+    function reload(){
+        window.location.reload()
+    }
+
     return(
         <div className={props.className}>
             <div className="welcome">
-                <div className="hello">
+                <div onClick={reload} className="hello">
                     <img src="currency.png" alt="xoxchange-icon"/> <span>Xchange 💸</span>
                 </div>
                 <div onClick={props.toggleDarkMode} className="theme"><i className="fa fa-adjust" /></div>
