@@ -43,7 +43,7 @@ export default function Home(props) {
       <div className="welcome">
         <div onClick={reload} className="hello">
           <img src="currency.png" alt="xoxchange-icon" />{" "}
-          <span>NGN</span>
+          <span>{props.defaultCurrency}</span>
         </div>
         <div onClick={props.toggleDarkMode} className="theme">
           <i className="fa fa-adjust" />

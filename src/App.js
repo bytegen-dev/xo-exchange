@@ -99,19 +99,74 @@ export default function App(){
             }
     }
 
+    function touchStartedII(event){
+        const appSettings = document.querySelector(".settings-items-holder")
+        console.log("scroll-started")
+            const startY = event.touches[0].clientY
+            appSettings.addEventListener("touchmove", touchMove)
+            appSettings.addEventListener("touchend", touchEnd)
+            
+            function touchMove(event){
+                const endY = event.changedTouches[0].clientY
+                if(endY < startY){
+                    setFooterVisible(false)
+                }
+                else if(endY > startY){
+                    setFooterVisible(true)
+                }
+            }
+
+            function touchEnd(){
+                console.log("touch ended")
+            }
+    }
+
+    function touchStartedIII(event){
+        const fave = document.querySelector(".fave-items-holder")
+        console.log("scroll-started")
+            const startY = event.touches[0].clientY
+            fave.addEventListener("touchmove", touchMove)
+            fave.addEventListener("touchend", touchEnd)
+            
+            function touchMove(event){
+                const endY = event.changedTouches[0].clientY
+                if(endY < startY){
+                    setFooterVisible(false)
+                }
+                else if(endY > startY){
+                    setFooterVisible(true)
+                }
+            }
+
+            function touchEnd(){
+                console.log("touch ended")
+            }
+    }
+
     function showFooter(){
         setFooterVisible(true)
     }
 
+    const [selectedDefaultCurrency, setSelectedDefaultCurrency] = useState("NGN")
+    
+    const [defaultCurrency, setDefaultCurrency] = useState("NGN")
+
+    function changedefCurrency(){
+        setDefaultCurrency(selectedDefaultCurrency)
+    }
+
+    function changeselecteddefCurrency(event){
+        setSelectedDefaultCurrency(event.target.value)
+    }
     
 
 
     return(
         <div className={uiSettings.darkMode ? "dark container" : "container"}>
-            <Home onTouchStart={touchStarted} toggleDarkMode={toggleDarkMode} className={uiSettings.showHome ? "home show type-big" : "home type-big"}/>
-            <Search className={uiSettings.showSearch ? "search show type-big" : "search type-big"}/>
-            <Fave className={uiSettings.showFave ? "show fave type-big" : "fave type-big"} />
-            <Settings className={uiSettings.showSettings ? "settings show type-big" : "settings type-big"}/>
+            <Home  defaultCurrency={defaultCurrency} onTouchStart={touchStarted} toggleDarkMode={toggleDarkMode} className={uiSettings.showHome ? "home show type-big" : "home type-big"}/>
+            <Search defaultCurrency={defaultCurrency} className={uiSettings.showSearch ? "search show type-big" : "search type-big"}/>
+            <Fave touchStart={touchStartedIII} className={uiSettings.showFave ? "show fave type-big" : "fave type-big"} />
+            <Settings defaultCurrency={defaultCurrency} changeselecteddefCurrency={changeselecteddefCurrency} changedefCurrency={changedefCurrency} selectedDefaultCurrency={selectedDefaultCurrency} darkMode={uiSettings.darkMode} toggleDarkMode={toggleDarkMode} touchStart={touchStartedII} className={uiSettings.showSettings ? "settings show type-big" : "settings type-big"}/>
             <Footer
             className={footerVisible ? "footer show type-big" : "footer type-big"}
             gotoHome={gotoHome}
