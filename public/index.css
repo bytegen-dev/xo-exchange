@@ -824,7 +824,7 @@ html{
 
 .prelaoder{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     z-index: 50;
     position: fixed;
@@ -854,8 +854,8 @@ html{
     justify-content: center;
     align-items: center;
     color: #fff;
-    background-color: rgb(53, 88, 241);
-    box-shadow: 0px 0px 10px rgb(53, 88, 241);
+    background-color: rgb(47, 74, 194);
+    box-shadow: 0px 0px 10px rgb(47, 74, 194);
     /* gap: 30px; */
     /* animation: preloader-holder 1s ease-in-out forwards infinite alternate; */
 }
