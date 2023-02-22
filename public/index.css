@@ -841,8 +841,8 @@ html{
     }
 
     .home .featured .featured-items-holder .featured--item{
-        min-width: 170px !important;
-        height: 170px;
+        min-width: 190px !important;
+        height: 190px;
         padding: 0px !important
     }
 
