@@ -6,6 +6,7 @@ import Search from "./Search";
 import Settings from "./Settings";
 import Footer from "./Footer";
 import Fave from "./Fave";
+import Prelaoder from "./Preloader";
 
 export default function App(){
     const [uiSettings, setUiSettings] = useState({
@@ -181,6 +182,7 @@ export default function App(){
             <div onClick={showFooter} className={footerVisible ? "show-footer" : "show show-footer"}>
                 <i className="fa fa-arrow-up" />
             </div>
+            <Prelaoder />
         </div>
     )
 }
