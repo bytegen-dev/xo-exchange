@@ -818,6 +818,12 @@ html{
         transform: scale(1);
     }
 
+    .home .featured .featured-items-holder .featured--item{
+        min-width: 170px !important;
+        height: 170px;
+        padding: 0px !important;
+    }
+
 
 
 }
