@@ -863,7 +863,7 @@ html{
     align-items: center;
     animation: preloader 0.5s ease forwards;
     animation-delay: 3s;
-    display: none;
+    /* display: none; */
 }
 
 @keyframes preloader {
