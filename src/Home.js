@@ -18,9 +18,6 @@ export default function Home(props) {
     fetchCurrencies();
   }, []);
 
-  function reload() {
-    window.location.reload();
-  }
 
   function formatCurrency(amount, code) {
     if (amount === undefined) {
@@ -41,8 +38,8 @@ export default function Home(props) {
   return (
     <div className={props.className}>
       <div className="welcome">
-        <div onClick={reload} className="hello">
-          <img src="currency.png" alt="xoxchange-icon" />{" "}
+        <div className="hello">
+          <a href="https://github.com/tertiux/xo-exchange.git" target="_blank" rel="noreferrer" className="circlle"><i className="fa fa-info" /></a>
           <span>{props.defaultCurrency}</span>
         </div>
         <div onClick={props.toggleDarkMode} className="theme">

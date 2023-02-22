@@ -4,6 +4,7 @@ export default function Settings(props){
     const [uiSettingsX, setUiSettingsX] = React.useState({
         dataSaver: false,
         animation: "MAX",
+        color: "green"
     })
 
     function dataSaverToggle(){
@@ -20,17 +21,20 @@ export default function Settings(props){
             if(prevState.animation === "MAX"){
                 return({
                     ...prevState,
-                    animation: "OFF"
+                    animation: "OFF",
+                    color: "red"
                 })
             } else if(prevState.animation === "OFF"){
                 return({
                     ...prevState,
-                    animation: "MIN"
+                    animation: "MIN",
+                    color: "#777"
                 })
             } else{
                 return({
                     ...prevState,
-                    animation: "MAX"
+                    animation: "MAX",
+                    color: "green"
                 })
             }
 
@@ -59,13 +63,13 @@ export default function Settings(props){
                             <div className="abt">Night Mode</div>
                             <div className="toggle">{props.darkMode ? "ON" : "OFF"}</div>
                         </div>
-                        <div className="settings--item">
-                            <div onClick={dataSaverToggle} className="abt">Data Saver</div>
+                        <div className="settings--item" onClick={dataSaverToggle}>
+                            <div className="abt">Data Saver</div>
                             <div className="toggle">{uiSettingsX.dataSaver ? "ON" : "OFF"}</div>
                         </div>
                         <div onClick={animationChange} className="settings--item">
                             <div className="abt">Animations</div>
-                            <div className="toggle">{uiSettingsX.animation}</div>
+                            <div className="toggle arnim" style={{color : uiSettingsX.color}}>{uiSettingsX.animation}</div>
                         </div>
                         <div className="settings--item">
                             <div className="abt">Privacy</div>

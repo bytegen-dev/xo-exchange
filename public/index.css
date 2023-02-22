@@ -14,6 +14,7 @@
     overflow: hidden;
     font-family: sans-serif;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 html{
@@ -459,6 +460,7 @@ html{
     align-items: center;
 }
 
+
 .settings h2::before{
     content: "";
     position: absolute;
@@ -480,7 +482,7 @@ html{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .settings a{
@@ -574,6 +576,7 @@ html{
 .fave{
     display: flex;
     flex-direction: column;
+    background-color: #777;
 }
 
 .fave .top-section{
@@ -583,6 +586,13 @@ html{
     justify-content: center;
     align-items: center;
     gap: 20px;
+    border-radius: 0 0 30px 30px;
+    background-color: #fff;
+    /* box-shadow: 0px 20px 100px #000; */
+}
+
+.dark .fave .top-section{
+    background-color: #242327;
 }
 
 .fave .top-section p{
@@ -657,8 +667,6 @@ html{
     display: none;
 }
 
-
-
 @media screen and (max-width: 700px) {
     .type-big{
         width: 100%;
@@ -703,8 +711,34 @@ html{
 
     .dark .footer{
         border-top: 2px solid #fff9;
+        animation: borderColor 3s ease forwards infinite alternate;
     }
 
+    @keyframes borderColor {
+        0%{
+            border-color: rgb(88, 0, 0);
+        }
+        20%{
+            border-color: rgb(82, 53, 0);
+            
+        }
+        40%{
+            border-color: rgb(92, 92, 0);
+            
+        }
+        60%{
+            border-color: rgb(0, 80, 0);
+            
+        }
+        80%{
+            border-color: rgb(0, 0, 90);
+            
+        }
+        100%{
+            border-color: rgb(70, 0, 70);
+        }
+    }
+    
     .dark .search form{
         background-color: #fff;
         border: 2px solid #fff !important;
@@ -723,7 +757,37 @@ html{
         transform: translateY(-15px);
         background-color: #fff;
     }
+    
+    .dark .footer button.active i{
+        animation: buttonColor 3s ease forwards infinite alternate;
+        transition: all 0.5s ease;
+        
+    }
+    
+    @keyframes buttonColor {
+        0%{
+            text-shadow: 0px 0px 2px rgb(72, 0, 0);
+        }
+        20%{
+            text-shadow: 0px 0px 2px rgb(64, 28, 0);
+        }
+        40%{
+            text-shadow: 0px 0px 2px rgb(64, 51, 0);
+            
+        }
+        60%{
+            
+            text-shadow: 0px 0px 2px rgb(0, 52, 11);
+        }
+        80%{
+            text-shadow: 0px 0px 2px rgb(0, 5, 78);
+            
+        }
+        100%{
+            text-shadow: 0px 0px 2px rgb(49, 0, 64);
 
+        }
+    }
 
     .footer button i{
         transition-property: color, transform;
@@ -788,8 +852,8 @@ html{
     }
 
     .settings{
-        /* padding-top: 30px; */
         flex-direction: column;
+        background-color: #777;
     }
 
     .settings-nav{
@@ -814,12 +878,25 @@ html{
 
     .settings .app-about{
         border: none;
-        padding-top: 30px;
+        padding-top: 60px;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        /* box-shadow: 0px 20px 100px #000; */
+        transition: all 0.5s ease;
         align-items: center;
+        background-color: #fff;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .dark .settings .app-about{
+        border-radius: 0px;
+        background-color: #000;
+    }
+
+    .dark .fave .top-section{
+        background-color: #000;
     }
 
     .settings .app-settings{
@@ -840,10 +917,18 @@ html{
         transform: scale(1);
     }
 
+    .fave .top-section{
+        min-height: 50vh;
+    }
+
     .home .featured .featured-items-holder .featured--item{
         min-width: 190px !important;
         height: 190px;
         padding: 0px !important
+    }
+
+    .settings .settings-items-holder .settings--item:hover{
+        width: 200px !important;
     }
 
 
@@ -862,8 +947,31 @@ html{
     justify-content: center;
     align-items: center;
     animation: preloader 0.5s ease forwards;
-    animation-delay: 3s;
+    animation-delay: 4s;
+    transition: all 0.5s ease;
     /* display: none; */
+}
+
+.dark .prelaoder{
+    background-color: #000;
+}
+
+.prelaoder::before{
+    content: "night";
+    position: absolute;
+    bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    /* opacity: 0; */
+    color: goldenrod;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateY(100px);
+}
+
+.dark .prelaoder::before{
+    opacity: 0.4;
+    transform: translateY(0);
 }
 
 @keyframes preloader {
@@ -883,10 +991,17 @@ html{
     justify-content: center;
     align-items: center;
     color: #fff;
+    transition: all 0.5s ease;
+    border: 3px solid transparent;
     background-color: rgb(38, 40, 50);
     box-shadow: 0px 0px 10px rgb(38, 40, 50);
     /* gap: 30px; */
     /* animation: preloader-holder 1s ease-in-out forwards infinite alternate; */
+}
+
+.dark .preloader-holder{
+    background-color: #000;
+    border-color: goldenrod;
 }
 
 .preloader-holder > div{
@@ -948,5 +1063,60 @@ html{
     100%{
         opacity: 1;
         transform: translate(-35px, 35px);
+    }
+}
+
+.circlle{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: goldenrod;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.5s ease;
+}
+
+.circlle:hover{
+    opacity: 0.3;
+}
+
+.dark .circlle{
+    border-color: goldenrod;
+}
+
+.theme{
+    animation: theme 0.5s ease forwards;    
+}
+
+.dark .theme{
+    animation: themeDark 0.5s ease forwards;    
+}
+
+@keyframes theme {
+    0%{}
+
+    50%{
+        color: #000;
+        filter: blur(5px);        
+    }
+    
+    100%{
+        color: #000;
+    }
+}
+
+@keyframes themeDark {
+    0%{}
+
+    50%{
+        color: #fff;
+        filter: blur(5px);        
+    }
+    
+    100%{
+        color: #fff;
     }
 }

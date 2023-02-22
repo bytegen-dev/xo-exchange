@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import axios from "axios";
 import Home from "./Home";
 import Search from "./Search";
@@ -159,6 +159,27 @@ export default function App(){
     function changeselecteddefCurrency(event){
         setSelectedDefaultCurrency(event.target.value)
     }
+
+    useEffect(
+        function(){
+            const date = new Date()
+            const hour = date.getHours()
+
+            if(hour > 16||hour < 8){
+                setUiSettings((prevState)=>{
+                    return({
+                        ...prevState, darkMode: true
+                    })
+                })
+            } else{
+                setUiSettings((prevState)=>{
+                    return({
+                        ...prevState, darkMode: false
+                    })
+                })
+            }
+        }, []
+    )
     
 
 
