@@ -865,7 +865,7 @@ html{
     }
     100%{
         box-shadow: 0px 0px 200px rgb(53, 88, 241);
-        transform: rotate(3000deg);
+        /* transform: rotate(3000deg); */
     }
 }
 
