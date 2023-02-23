@@ -595,6 +595,10 @@ html{
     background-color: #242327;
 }
 
+.dark .currency-value{
+    color: #777;
+}
+
 .fave .top-section p{
     max-width: 300px;
     text-align: center;
@@ -711,32 +715,8 @@ html{
 
     .dark .footer{
         border-top: 2px solid #fff9;
+        border-color: goldenrod;
         animation: borderColor 3s ease forwards infinite alternate;
-    }
-
-    @keyframes borderColor {
-        0%{
-            border-color: rgb(88, 0, 0);
-        }
-        20%{
-            border-color: rgb(82, 53, 0);
-            
-        }
-        40%{
-            border-color: rgb(92, 92, 0);
-            
-        }
-        60%{
-            border-color: rgb(0, 80, 0);
-            
-        }
-        80%{
-            border-color: rgb(0, 0, 90);
-            
-        }
-        100%{
-            border-color: rgb(70, 0, 70);
-        }
     }
     
     .dark .search form{
